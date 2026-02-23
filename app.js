@@ -1,4 +1,4 @@
-const socket = new WebSocket("wss://TON_SERVEUR_WEBSOCKET");
+const socket = new WebSocket("wss://jeu-longueur-onde.onrender.com");
 
 const lobby = document.getElementById("lobby");
 const game = document.getElementById("game");
