@@ -1,6 +1,8 @@
 import { WebSocketServer } from "ws";
 
-const wss = new WebSocketServer({ port: 8080 });
+const PORT = process.env.PORT || 8080;  // Render fournit PORT automatiquement
+const wss = new WebSocketServer({ port: PORT });
+
 const rooms = {};
 const genCode = () => Math.random().toString(36).substring(2, 7).toUpperCase();
 
@@ -69,3 +71,5 @@ wss.on("connection", ws => {
     }
   });
 });
+
+console.log("WebSocket server lancé sur le port", PORT);
