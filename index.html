@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Longueur d’Onde</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎯 Longueur d’Onde</h1>
+    <div class="toggles">
+      <button id="toggleTheme">🌙 / ☀️</button>
+      <button id="toggleSound">🔊</button>
+    </div>
+  </header>
 
+  <div id="lobby">
+    <input id="pseudo" placeholder="Ton pseudo" />
+    <button id="createRoom">Créer une room</button>
+    <input id="roomInput" placeholder="Code de room" />
+    <button id="joinRoom">Rejoindre</button>
+
+    <details>
+      <summary>🎭 Thèmes personnalisés (optionnel)</summary>
+      <textarea id="themesInput" placeholder="Un thème par ligne&#10;Ex: Froid → Chaud"></textarea>
+    </details>
+  </div>
+
+  <div id="game" class="hidden">
+    <h2 id="roomName"></h2>
+    <p id="role"></p>
+
+    <div id="wheelContainer">
+      <div id="wheel">
+        <div id="target" class="hidden"></div>
+        <div id="needle"></div>
+        <div id="cover"></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input type="range" min="0" max="100" id="guess" />
+      <button id="sendGuess">Envoyer ma position</button>
+      <button id="newRound">Nouvelle manche (Maître)</button>
+      <button id="toggleTarget">👁️ Afficher/Masquer la cible</button>
+    </div>
+
+    <section class="panels">
+      <div>
+        <h3>🏆 Scores</h3>
+        <ul id="scores"></ul>
+      </div>
+      <div>
+        <h3>📜 Historique</h3>
+        <ul id="history"></ul>
+      </div>
+    </section>
+  </div>
+
+  <audio id="spinSound" src="spin.mp3"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
